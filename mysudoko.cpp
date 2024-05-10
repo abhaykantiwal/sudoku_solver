@@ -14,7 +14,7 @@ bool canbeplaced(vector<vector<int>> &board,int row,int column,int value){
         if(board[i][column]==value){
             return false;
         }
-        //checking whether there is an element is the same grid
+        //checking whether there is an element in the same grid
         if(board[3*(row/3)+i/3][3*(column/3)+i%3]==value){
             return false;
         }
@@ -38,8 +38,8 @@ bool solve(vector<vector<int>>& sudoku){
                         else{
                             sudoku[row][column]=0;
                         }
-                    }
-                }
+                    } 
+                } 
                 return false;                          //none of the value can be put at that index 
             } 
         }

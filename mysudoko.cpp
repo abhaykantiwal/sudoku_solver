@@ -6,11 +6,11 @@ using namespace std;
 //function to check whether the value (from 1 to 9) can be placed at a particular index or not
 bool canbeplaced(vector<vector<int>> &board,int row,int column,int value){
     for(int i=0;i<board[0].size();i++){
-        //checking whether there is an element is the same row 
+        //checking whether there is an element in the same row 
         if(board[row][i]==value){
             return false;
         }
-        //checking whether there is an element is the same column
+        //checking whether there is an element in the same column
         if(board[i][column]==value){
             return false;
         }
@@ -27,7 +27,7 @@ bool solve(vector<vector<int>>& sudoku){
     int n = sudoku[0].size();
     for(int row =0;row<n ; row++){
         for(int column=0;column<n;column++){
-            if(sudoku[row][column]==0){
+           if(sudoku[row][column]==0){
                 for(int value = 1;value<=9;value++){     
                     if(canbeplaced(sudoku,row,column,value)){
                         sudoku[row][column] = value;
@@ -41,7 +41,7 @@ bool solve(vector<vector<int>>& sudoku){
                     }
                 }
                 return false;                          //none of the value can be put at that index 
-            }
+            } 
         }
     }
     return true;
